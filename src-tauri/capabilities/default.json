@@ -1,0 +1,7 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Default application capability for Forge AI Studio.",
+  "windows": ["main"],
+  "permissions": ["core:default"]
+}
