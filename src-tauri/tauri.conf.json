@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Forge AI Studio",
+  "version": "0.1.0",
+  "identifier": "com.forge.aistudio",
+  "build": { "frontendDist": "../web" },
+  "app": {
+    "windows": [{ "title": "Forge AI Studio", "width": 1240, "height": 840, "minWidth": 360, "minHeight": 600, "resizable": true }],
+    "security": { "csp": null }
+  },
+  "bundle": { "active": true, "targets": ["nsis", "msi"], "category": "DeveloperTool", "shortDescription": "Your self-hosted AI workspace", "longDescription": "Organize models, datasets, training runs, and deployments from one workspace. Connect hardware and runtimes you control." }
+}
