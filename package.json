@@ -1,0 +1,18 @@
+{
+  "name": "forge-ai-studio",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A self-hosted AI model workspace for Windows and Android.",
+  "scripts": {
+    "tauri": "tauri",
+    "dev": "tauri dev",
+    "build:windows": "tauri build",
+    "android:init": "tauri android init",
+    "android:dev": "tauri android dev",
+    "android:apk": "tauri android build --apk",
+    "android:aab": "tauri android build --aab"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.0.0"
+  }
+}
