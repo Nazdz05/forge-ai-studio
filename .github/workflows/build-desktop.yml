@@ -55,6 +55,9 @@ jobs:
       - name: Install frontend dependencies
         run: npm install
 
+      - name: Generate platform icons
+        run: npm run tauri -- icon src-tauri/icons/forge.svg --output src-tauri/icons
+
       - name: Build app bundles
         run: npm run ${{ matrix.script }}
 
