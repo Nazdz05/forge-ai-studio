@@ -8,5 +8,5 @@
     "windows": [{ "title": "Forge AI Studio", "width": 1240, "height": 840, "minWidth": 360, "minHeight": 600, "resizable": true }],
     "security": { "csp": null }
   },
-  "bundle": { "active": true, "targets": ["nsis", "msi"], "category": "DeveloperTool", "shortDescription": "Your self-hosted AI workspace", "longDescription": "Organize models, datasets, training runs, and deployments from one workspace. Connect hardware and runtimes you control." }
+  "bundle": { "active": true, "targets": "all", "category": "DeveloperTool", "shortDescription": "Your self-hosted AI workspace", "longDescription": "Organize models, datasets, training runs, and deployments from one workspace. Connect hardware and runtimes you control." }
 }
