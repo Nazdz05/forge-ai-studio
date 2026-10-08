@@ -28,17 +28,49 @@ Each runtime and model has its own hardware requirements and license. The user s
 
 The appearance toggle in the top bar switches between light and dark themes. Your selection is saved in this browser; first visit follows the operating system theme.
 
-## Windows and Android app builds
+## Windows, macOS, and Linux desktop builds
 
-The same responsive UI is wrapped in a Tauri 2 native shell. Install Node.js LTS with npm, Rust (MSVC toolchain), and the Microsoft C++ Build Tools to build on Windows. WebView2 is also required (usually already present on supported Windows versions).
+The same responsive UI is wrapped in a Tauri 2 native shell. Build each desktop installer on its target operating system. All builds need Node.js LTS with npm and the Rust toolchain. The host-specific dependencies below are also required.
 
-```powershell
+### Windows
+
+Install the Rust MSVC toolchain and Microsoft C++ Build Tools. WebView2 is also required (usually present on supported Windows versions).
+
+```sh
 npm install
 npm run dev
 npm run build:windows
 ```
 
-The Windows installer bundles are written under `src-tauri/target/release/bundle/`.
+The Windows NSIS and MSI installers are written under `src-tauri/target/release/bundle/`.
+
+### macOS
+
+Install Xcode Command Line Tools and Rust for your Mac architecture, then run:
+
+```sh
+npm install
+npm run dev
+npm run build:macos
+```
+
+This creates `.app` and `.dmg` bundles. For public distribution, sign and notarize the app with an Apple Developer identity.
+
+### Linux
+
+Install the Rust toolchain and the WebKitGTK development packages required by Tauri for your distribution, then run:
+
+```sh
+npm install
+npm run dev
+npm run build:linux
+```
+
+This creates AppImage, Debian (`.deb`), and RPM packages. The required system packages vary by distribution; consult the [Tauri Linux prerequisites](https://v2.tauri.app/start/prerequisites/#linux) before building.
+
+The generic `npm run build` command lets Tauri select bundles for the current host. Cross-compiling desktop bundles is not configured; build on each target OS or use a CI runner for that OS.
+
+## Android app builds
 
 For Android, install Android Studio and its SDK Platform, Platform-Tools, NDK, Build-Tools, and command-line tools; configure `JAVA_HOME`, `ANDROID_HOME`, and `NDK_HOME`; and install the Android Rust targets. Then run:
 
